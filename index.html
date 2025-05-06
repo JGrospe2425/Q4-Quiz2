@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz#2</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <h1>Score Analyzer</h1>
+
+  <form>
+    <label>Math:</label>
+    <input type="text" id="math" placeholder="Enter your grade" />
+
+    <label>Science:</label>
+    <input type="text" id="science" placeholder="Enter your grade" />
+
+    <label>English:</label>
+    <input type="text" id="english" placeholder="Enter your grade" /><br>
+    <br>
+    <button type="button" onClick="verify()">Calculate Grade</button><br>
+  </form>
+
+  <script type="text/javascript">
+    function verify() {
+      let a = +document.getElementById('math').value;
+      let b = +document.getElementById('science').value;
+      let c = +document.getElementById('english').value;
+      let grade = (a + b + c) / 3;
+      let average = grade.toFixed(2);
+
+      if (grade >= 94 && grade <= 100) {
+        alert("Your general average is " + average + ". Excellent!");
+      } 
+
+      else if (grade >= 87 && grade < 94) {
+        alert("Your general average is " + average + ". Above Satisfactory.");
+      } 
+
+      else if (grade >= 80 && grade < 87) {
+        alert("Your general average is " + average + ". Satisfactory.");
+      } 
+
+      else if (grade >= 75 && grade < 80) {
+        alert("Your general average is " + average + ". Needs Improvement.");
+      }
+       
+      else if (grade >= 70 && grade < 75) {
+        alert("Your general average is " + average + ". Poor.");
+      } 
+
+      else {
+        alert("Invalid score. Please enter valid numeric grades.");
+      }
+    }
+  </script>
+</body>
+</html>
